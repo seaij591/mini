@@ -12,8 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.shop.community.inquiry;
 import com.shop.community.support;
+import com.shop.login.Signup;
 import com.shop.web.About;
 import com.shop.web.Shop;
+import com.shop.web.idCheck;
+import com.shop.web.memberJoin;
 
 //@WebServlet("/FrontController")
 public class FrontController extends HttpServlet {
@@ -35,6 +38,13 @@ public class FrontController extends HttpServlet {
 		//커뮤니티
 		map.put("/support.do", new support()); // 고객지원센터 페이지
 		map.put("/inquiry.do", new inquiry()); // 문의 게시판
+		map.put("/login.do", new Login()); //로그인폼 호출
+		//로그인처리
+		//로그아웃 처리
+		map.put("/signup.do", new Signup()); //회원가입폼 호출
+		map.put("/idCheck.do", new idCheck());//아이디 중복 체크
+		map.put("/memberJoin.do", new memberJoin()); // 회원가입 처리
+		//map.put("/community.do", new community());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
