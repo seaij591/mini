@@ -23,7 +23,7 @@
 				},
 				url: "ajaxMemberIdCheck", //별도 서블릿으로 만들었다. *.do에서 제외(컨트롤러 안탐)
 				success: function (data) {
-					if (data > 0) {
+					if (data >= 0) {
 						alert("아이디가 존재합니다. 다른 아이디를 입력해주세요.");
 						$("#memberId").val("");
 						$("#memberId").focus();
