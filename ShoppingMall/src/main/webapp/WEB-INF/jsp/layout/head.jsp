@@ -48,13 +48,13 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="./main.do"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.jsp"><img src="img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li><a href="./main.do">Home</a></li>
+                            <li><a href="./index.jsp">Home</a></li>
                             <li><a href="./shop.do">Shop</a></li>
                            
                             <li><a href="./about.do">About Us</a></li>
