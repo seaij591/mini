@@ -123,7 +123,7 @@
 										<div class="form-group d-flex align-items-center">
 											<label class="label" for="name">아이디</label> 
 											<input type="text" id="memberId" name="memberId" class="form-control" 
-												   placeholder="Full Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												   placeholder="ID">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												
 											<button type="button" id="idCheck" name="idCheck" value="unChecked">중복체크</button>
 										</div>
@@ -147,7 +147,7 @@
 									<div class="col-md-12">
 										<div class="form-group d-flex align-items-center">
 											<label class="label" for="phone">이름</label> 
-											<input type="text" id="memberName" name="memberName" class="form-control" placeholder="Password">
+											<input type="text" id="memberName" name="memberName" class="form-control" placeholder="Your Name">
 										</div>
 									</div>
 									<div class="col-md-12">

@@ -45,7 +45,7 @@
 							</div>
 							<form action="#" class="signin-form">
 								<div class="form-group mb-3">
-									<label class="label" for="name">이름</label> <input
+									<label class="label" for="name">아이디</label> <input
 										type="text" class="form-control" placeholder="Username"
 										required>
 								</div>
