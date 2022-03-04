@@ -44,7 +44,7 @@
 								</div>
 								<div class="w-100"></div>
 							</div>
-							<form action="#" class="signin-form">
+							<form action="main.do" class="signin-form">
 								<div class="form-group mb-3">
 									<label class="label" for="name">아이디</label> <input type="text"
 										class="form-control" placeholder="Username" required>
