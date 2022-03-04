@@ -12,6 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.shop.community.inquiry;
 import com.shop.community.support;
+
+import com.shop.dbtest.notice.web.Notice;
+import com.shop.dbtest.notice.web.NoticeForm;
+import com.shop.dbtest.notice.web.NoticeList;
+import com.shop.dbtest.notice.web.NoticeListPaging;
+import com.shop.dbtest.notice.web.NoticeWrite;
+
 import com.shop.login.Signup;
 import com.shop.web.About;
 import com.shop.web.Shop;
@@ -32,19 +39,25 @@ public class FrontController extends HttpServlet {
 		// TODO 호출명 저장소
 		map.put("/main.do", new MainPage()); // 시작페이지
 		map.put("/about.do", new About()); // 회사소개
-		map.put("/shop.do", new Shop()); //shop 정보
-		
-		
-		//커뮤니티
+		map.put("/shop.do", new Shop()); // shop 정보
+
+		// 커뮤니티
 		map.put("/support.do", new support()); // 고객지원센터 페이지
 		map.put("/inquiry.do", new inquiry()); // 문의 게시판
-		map.put("/login.do", new Login()); //로그인폼 호출
-		//로그인처리
-		//로그아웃 처리
-		map.put("/signup.do", new Signup()); //회원가입폼 호출
-		map.put("/idCheck.do", new idCheck());//아이디 중복 체크
+
+		map.put("/noticeList.do", new NoticeList()); // 공지사항 목록
+		map.put("/noticeListPaging.do", new NoticeListPaging()); // 공지사항 목록
+		map.put("/notice.do", new Notice()); // 공지사항 내용보기
+		map.put("/noticeForm.do", new NoticeForm()); // 공지사항 등록 폼 호출
+		map.put("/noticeWrite.do", new NoticeWrite()); // 공지사항 저장
+
+		map.put("/login.do", new Login()); // 로그인폼 호출
+		// 로그인처리
+		// 로그아웃 처리
+		map.put("/signup.do", new Signup()); // 회원가입폼 호출
+		map.put("/idCheck.do", new idCheck());// 아이디 중복 체크
 		map.put("/memberJoin.do", new memberJoin()); // 회원가입 처리
-		//map.put("/community.do", new community());
+
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
