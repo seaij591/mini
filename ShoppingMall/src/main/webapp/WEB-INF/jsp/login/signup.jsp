@@ -67,6 +67,18 @@
 			return false;
 		}
 		
+		if (frm.memberName.value == "") {
+			alert("이름을 입력하세요.");
+			frm.memberPassword.focus();
+			return false;
+		}
+		
+		if (frm.memberAddress.value == "") {
+			alert("주소를 입력하세요.");
+			frm.memberPassword.focus();
+			return false;
+		}
+		
 		frm.submit();
 	}
 
