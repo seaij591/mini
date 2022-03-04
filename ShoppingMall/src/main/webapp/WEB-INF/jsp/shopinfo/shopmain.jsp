@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zxx">
+
 <body>
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
@@ -48,7 +49,7 @@
                                                     <li><a href="#">Pants (20)</a></li>
                                                     <li><a href="#">Shoes (20)</a></li>
                                                     <li><a href="#">Training (20)</a></li>
-                                                   
+
                                                 </ul>
                                             </div>
                                         </div>
@@ -205,6 +206,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- 상품리스트;. -->
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
@@ -241,6 +244,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- 임의로... -->
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item sale">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
@@ -630,6 +634,8 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- 임의로... -->
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
