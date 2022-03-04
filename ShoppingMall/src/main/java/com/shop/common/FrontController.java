@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.shop.dbtest.notice.web.Notice;
+import com.shop.dbtest.notice.web.NoticeForm;
+import com.shop.dbtest.notice.web.NoticeList;
+import com.shop.dbtest.notice.web.NoticeListPaging;
+import com.shop.dbtest.notice.web.NoticeWrite;
 import com.shop.web.About;
 import com.shop.web.Shop;
 
@@ -28,6 +33,12 @@ public class FrontController extends HttpServlet {
 		map.put("/main.do", new MainPage()); // 시작페이지
 		map.put("/about.do", new About()); // 회사정보
 		map.put("/shop.do", new Shop()); //shop 정보
+		map.put("/noticeList.do", new NoticeList()); // 공지사항 목록
+		map.put("/noticeListPaging.do", new NoticeListPaging()); // 공지사항 목록
+		map.put("/notice.do", new Notice()); // 공지사항 내용보기
+		map.put("/noticeForm.do", new NoticeForm()); // 공지사항 등록 폼 호출
+		map.put("/noticeWrite.do", new NoticeWrite()); // 공지사항 저장
+		
 		//map.put("/community.do", new community());
 	}
 
