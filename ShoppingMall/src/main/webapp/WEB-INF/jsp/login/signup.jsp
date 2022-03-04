@@ -7,22 +7,22 @@
 <script src="js/signup/main.js"></script>
 
 <script>
-	$(function () {
-		$('#memberId').change(function () {
+	$(function() {
+		$('#memberId').change(function() {
 			$('#idCheck').val('unChecked');
 		});
 
 		//idCheck 버튼을 클릭했을 때 
-		$("#idCheck").click(function () {
+		$("#idCheck").click(function() {
 			var userid = $("#memberId").val();
 
 			$.ajax({
-				type: 'POST',
-				data: {
-					id: userid
+				type : 'POST',
+				data : {
+					id : userid
 				},
-				url: "ajaxMemberIdCheck", //별도 서블릿으로 만들었다. *.do에서 제외(컨트롤러 안탐)
-				success: function (data) {
+				url : "ajaxMemberIdCheck", //별도 서블릿으로 만들었다. *.do에서 제외(컨트롤러 안탐)
+				success : function(data) {
 					if (data > 0) {
 						alert("아이디가 존재합니다. 다른 아이디를 입력해주세요.");
 						$("#memberId").val("");
@@ -33,7 +33,7 @@
 						$("#memberPassword").focus();
 					}
 				},
-				error: function (error) {
+				error : function(error) {
 					alert("error : " + error);
 				}
 			});
@@ -59,32 +59,33 @@
 			frm.memberPassword.focus();
 			return false;
 		}
-		if(frm.memberPassword.value != frm.memberPassword1.value){
+		if (frm.memberPassword.value != frm.memberPassword1.value) {
 			alert("패스워드가 일치하지 않습니다.");
-			frm.memberPassword.value="";
-			frm.memberPassword1.value="";
+			frm.memberPassword.value = "";
+			frm.memberPassword1.value = "";
 			frm.memberPassword.focus();
 			return false;
 		}
-		
+
 		if (frm.memberName.value == "") {
 			alert("이름을 입력하세요.");
 			frm.memberPassword.focus();
 			return false;
 		}
-		
+
 		if (frm.memberAddress.value == "") {
 			alert("주소를 입력하세요.");
 			frm.memberPassword.focus();
 			return false;
 		}
-		
+
 		frm.submit();
 	}
 
 	function idCheckDo() {
 		var id = frm.memberId.value;
-		window.open("/DbTest/idCheck.do?id=" + id, "childForm", "width=570, height=350, resizable = no, scrollbars = no");
+		window.open("/DbTest/idCheck.do?id=" + id, "childForm",
+				"width=570, height=350, resizable = no, scrollbars = no");
 
 	}
 </script>
@@ -125,76 +126,82 @@
 								<p>저희 키큰남자에서 고객님의 스타일에 딱 맞는 옷을 찾아보세요!</p>
 							</div>
 						</div>
+
 						<div class="login-wrap p-4 p-md-5">
 							<h3 class="mb-3">회 원 가 입</h3>
 							<div>
-							<form id="frm" name="frm" action="memberJoin.do" method="post">
-							
-								<div class="row">
-									<div class="col-md-12">
-										<div class="form-group d-flex align-items-center">
-											<label class="label" for="name">아이디</label> 
-											<input type="text" id="memberId" name="memberId" class="form-control" 
-												   placeholder="Full Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-												
-											<button type="button" id="idCheck" name="idCheck" value="unChecked">중복체크</button>
-										</div>
+								<form id="frm" name="frm" action="memberJoin.do" method="post">
+									<div style='width:80px;float: right;'>
+									<button type="button" id="idCheck" name="idCheck"
+										value="unChecked" >중복체크</button>
 									</div>
-									
-									<div class="col-md-12">
-										<div class="form-group d-flex align-items-center">
-											<label class="label" for="email">비밀번호</label> 
-											<input type="password" id="memberPassword" name="memberPassword" class="form-control"
-												placeholder="Password">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group d-flex align-items-center">
+												<label class="label" for="name">아이디</label> <input
+													type="text" id="memberId" name="memberId"
+													class="form-control" placeholder="Full Name">
+
+											</div>
 										</div>
-									</div>
-									
-									<div class="col-md-12">
-										<div class="form-group d-flex align-items-center">
-											<label class="label" for="phone">비밀번호 확인</label> 
-											<input type="password" id="memberPassword1" name="memberPassword1" class="form-control" placeholder="Password">
+										<div class="col-md-12">
+											<div class="form-group d-flex align-items-center">
+												<label class="label" for="email">비밀번호</label> <input
+													type="password" id="memberPassword" name="memberPassword"
+													class="form-control" placeholder="Password">
+											</div>
 										</div>
-									</div>
-									
-									<div class="col-md-12">
-										<div class="form-group d-flex align-items-center">
-											<label class="label" for="phone">이름</label> 
-											<input type="text" id="memberName" name="memberName" class="form-control" placeholder="홍길동">
+
+										<div class="col-md-12">
+											<div class="form-group d-flex align-items-center">
+												<label class="label" for="phone">비밀번호 확인</label> <input
+													type="password" id="memberPassword1" name="memberPassword1"
+													class="form-control" placeholder="Password">
+											</div>
 										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group d-flex align-items-center">
-											<label class="label" for="password">주소</label> 
-											<input type="text" id="memberAddress" name="memberAddress" class="form-control" placeholder="대구 중구...">
+
+										<div class="col-md-12">
+											<div class="form-group d-flex align-items-center">
+												<label class="label" for="phone">이름</label> <input
+													type="text" id="memberName" name="memberName"
+													class="form-control" placeholder="홍길동">
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group d-flex align-items-center">
+												<label class="label" for="password">주소</label> <input
+													type="text" id="memberAddress" name="memberAddress"
+													class="form-control" placeholder="대구 중구...">
+											</div>
+										</div>
+
+										<div class="col-md-50">
+											<div class="form-group">
+												<button type="button" onclick="formCheck()"
+													class="btn btn-secondary submit p-3">Create an
+													account</button>
+											</div>
 										</div>
 									</div>
 
-									<div class="col-md-50">
-										<div class="form-group">
-											<button type="button" onclick="formCheck()" class="btn btn-secondary submit p-3">Create
-												an account</button>
-										</div>
+								</form>
+								<div class="social-wrap">
+									<p class="or">
+									<div class="w-100 text-center">
+										<p class="mt-4">
+											이미 회원가입이 되어있으십니까? <a href="./login.do">로그인으로</a>
+										</p>
 									</div>
 								</div>
-
-							</form>
-							<div class="social-wrap">
-								<p class="or">
-
-							<div class="w-100 text-center">
-								<p class="mt-4">
-									이미 회원가입이 되어있으십니까? <a href="./login.do">로그인으로</a>
-								</p>
 							</div>
 						</div>
+
 					</div>
 				</div>
-			</div>
-		</div>
 	</section>
 
 
-	
+
 
 </body>
 </html>
