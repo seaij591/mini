@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-7">
                         <div class="header__top__left">
-                            <p>응애</p>
+                            <p>키큰 남자들의 쇼핑몰</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-5">
@@ -57,7 +57,7 @@
                             <li><a href="./index.jsp">Home</a></li>
                             <li><a href="./shop.do">Shop</a></li>
                            
-                            <li><a href="./about.jsp">About Us</a></li>
+                            <li><a href="./about.do">About Us</a></li>
                             
                             <li><a href="#">My Page</a>
                                 <ul class="dropdown">
@@ -72,8 +72,8 @@
                             	<ul class="dropdown">
                                     <li><a href="./.html">공지사항</a></li>
                                     <li><a href="./.html">자주묻는질문</a></li>
-                                    <li><a href="./.html">문의</a></li>
-                                    <li><a href="./.html">고객지원센터</a></li>
+                                    <li><a href="./inquiry.do">문의</a></li>
+                                    <li><a href="./support.do">고객지원센터</a></li>
                                 </ul>
                             </li>
                         </ul>
