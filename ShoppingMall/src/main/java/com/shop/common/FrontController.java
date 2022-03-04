@@ -20,6 +20,7 @@ import com.shop.dbtest.notice.web.NoticeListPaging;
 import com.shop.dbtest.notice.web.NoticeWrite;
 
 import com.shop.login.Signup;
+import com.shop.login.MemberLogin;
 import com.shop.web.About;
 import com.shop.web.Shop;
 import com.shop.web.idCheck;
@@ -52,7 +53,7 @@ public class FrontController extends HttpServlet {
 		map.put("/noticeWrite.do", new NoticeWrite()); // 공지사항 저장
 
 		map.put("/login.do", new Login()); // 로그인폼 호출
-		// 로그인처리
+		map.put("/memberLogin.do", new MemberLogin());// 로그인처리
 		// 로그아웃 처리
 		map.put("/signup.do", new Signup()); // 회원가입폼 호출
 		map.put("/idCheck.do", new idCheck());// 아이디 중복 체크

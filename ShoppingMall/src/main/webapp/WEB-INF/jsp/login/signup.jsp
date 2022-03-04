@@ -67,6 +67,18 @@
 			return false;
 		}
 		
+		if (frm.memberName.value == "") {
+			alert("이름을 입력하세요.");
+			frm.memberPassword.focus();
+			return false;
+		}
+		
+		if (frm.memberAddress.value == "") {
+			alert("주소를 입력하세요.");
+			frm.memberPassword.focus();
+			return false;
+		}
+		
 		frm.submit();
 	}
 
@@ -147,7 +159,7 @@
 									<div class="col-md-12">
 										<div class="form-group d-flex align-items-center">
 											<label class="label" for="phone">이름</label> 
-											<input type="text" id="memberName" name="memberName" class="form-control" placeholder="Password">
+											<input type="text" id="memberName" name="memberName" class="form-control" placeholder="홍길동">
 										</div>
 									</div>
 									<div class="col-md-12">

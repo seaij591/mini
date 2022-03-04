@@ -1,6 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!doctype html>
+	
+<script type="text/javascript">
+	function formCheck() {
+		if(frm.memberId.value == ""){
+			alert("아이디를 입력하세요.");
+			frm.memberId.focus();
+			return false;
+		}
+		
+		if(frm.memberPassword.value ==""){
+			alert("패스워드를 입력하세요.");
+			frm.memberPassword.focus();
+			return false;
+		}
+		
+		frm.submit();
+	}
+	
+</script>	
+
 <html>
 <head>
 <title>Login 04</title>
@@ -43,37 +62,39 @@
 									
 								</div>
 							</div>
-							<form action="#" class="signin-form">
+							<div>
+							<form id="frm" name="frm" action="memberLogin.do" method="post">
 								<div class="form-group mb-3">
 									<label class="label" for="name">이름</label> <input
-										type="text" class="form-control" placeholder="Username"
+										type="text" id="memberId" name="memberId" class="form-control" placeholder="Username"
 										required>
 								</div>
 								<div class="form-group mb-3">
 									<label class="label" for="password">비밀번호</label> <input
-										type="password" class="form-control" placeholder="Password"
+										type="password" id="memberPassword" name="memberPassword" class="form-control" placeholder="Password"
 										required>
 								</div>
 								<div class="form-group">
-									<button type="submit"
+									<button type="button" onclick="formCheck()"
 										class="form-control btn btn-primary rounded submit px-3">로그인</button>
 								</div>
 								
 									<div>
-										<a  href="./signup.do">회원가입</a><br>
+										<a href="./signup.do">회원가입</a><br>
 										<a href="#">아이디찾기</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										<a href="#">비밀번호찾기</a><br>
 									
 										
 									</div>
+									</form>
 								</div>
-							</form>
 							
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+	
 	</section>
 
 
