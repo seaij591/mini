@@ -10,8 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.shop.login.Signup;
 import com.shop.web.About;
 import com.shop.web.Shop;
+import com.shop.web.idCheck;
+import com.shop.web.memberJoin;
 
 //@WebServlet("/FrontController")
 public class FrontController extends HttpServlet {
@@ -28,7 +31,12 @@ public class FrontController extends HttpServlet {
 		map.put("/main.do", new MainPage()); // 시작페이지
 		map.put("/about.do", new About()); // 회사정보
 		map.put("/shop.do", new Shop()); //shop 정보
-		map.put("/login.do", new Login());
+		map.put("/login.do", new Login()); //로그인폼 호출
+		//로그인처리
+		//로그아웃 처리
+		map.put("/signup.do", new Signup()); //회원가입폼 호출
+		map.put("/idCheck.do", new idCheck());//아이디 중복 체크
+		map.put("/memberJoin.do", new memberJoin()); // 회원가입 처리
 		//map.put("/community.do", new community());
 	}
 
