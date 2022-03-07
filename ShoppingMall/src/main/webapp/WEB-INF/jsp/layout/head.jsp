@@ -49,7 +49,7 @@
 							} else {
 							%>
 
-							<li><a href="<%=request.getContextPath()%>/logout.do"
+							<li><a href="<%=request.getContextPath()%>/memberLogOut.do"
 								class="button alt">LOG OUT</a></li>
 							<%
 							}
@@ -95,7 +95,7 @@
 						<c:if test="${id eq 'admin'}">
 							<li><a href="#">관리자메뉴</a>
 								<ul class="dropdown">
-									<li><a href="#">상품등록/수정</a></li>
+									<li><a href="./productFrom.do">상품등록/수정</a></li>
 									<li><a href="#">회원리스트</a></li>
 								</ul></li>
 						</c:if>
