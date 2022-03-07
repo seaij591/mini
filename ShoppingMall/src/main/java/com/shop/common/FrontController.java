@@ -18,10 +18,10 @@ import com.shop.dbtest.notice.web.NoticeList;
 import com.shop.dbtest.notice.web.NoticeListPaging;
 import com.shop.dbtest.notice.web.NoticeWrite;
 import com.shop.login.MemberLogin;
-import com.shop.login.MemberLogout;
 import com.shop.login.Signup;
 import com.shop.product.ProductFrom;
 import com.shop.web.About;
+import com.shop.web.MemberList;
 import com.shop.web.MemberLogOut;
 import com.shop.web.Shop;
 import com.shop.web.idCheck;
@@ -63,6 +63,7 @@ public class FrontController extends HttpServlet {
 		
 		//관리자
 		map.put("/productFrom.do", new ProductFrom());
+		map.put("/memberList.do", new MemberList()); //회원 리스트 출력
 		
 	}
 
