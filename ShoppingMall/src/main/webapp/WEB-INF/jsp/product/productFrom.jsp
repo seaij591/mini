@@ -35,5 +35,11 @@
 			</c:forEach>
 		</table>
 	</div><br />
+	<div>
+		<button type="button" onClick="location.href='main.do'">홈</button>&nbsp;&nbsp;&nbsp;
+		<c:if test="${not empty id }">
+			<button type="button" onClick="location.href=productInsertForm.do'">등록</button>
+		</c:if>
+	</div>
 </div>
 </body>

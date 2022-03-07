@@ -7,41 +7,43 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.shop.common.DAO;
-import com.shop.member.vo.MemberVO;
 import com.shop.product.service.ProductService;
 import com.shop.product.vo.ProductVO;
 
 public class ProductServiceImpl extends DAO implements ProductService {
 	private PreparedStatement psmt;
 	private ResultSet rs;
-	
+
 	@Override
 	public List<ProductVO> selectProductList() {
-		//상품조회
-		public List<ProductVO> selectProductVOList() {
-			List<MemberVO> members = new ArrayList<MemberVO>();
-			MemberVO vo;
-			String sql = "SELECT * FROM MEMBERS";
-			try {
-				psmt = conn.prepareStatement(sql);
-				rs = psmt.executeQuery();
-				while (rs.next()) {
-					vo = new MemberVO();
-					vo.setMemberId(rs.getString("member_id"));
-					vo.setMemberPassword(rs.getString("member_password"));
-					vo.setMemberName(rs.getString("member_name"));
-					vo.setMemberAddress(rs.getString("member_address"));
-					members.add(vo);
+		// 상품조회
+		List<ProductVO> products = new ArrayList<ProductVO>();
+		ProductVO vo;
+		String sql = "SELECT * FROM PRODUCT";
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			while (rs.next()) {
+				vo = new ProductVO();
+				vo.setPdid(rs.getString("pd_id"));
+				vo.setPdCategory(rs.getString("pd_category"));
+				vo.setPdName(rs.getString("pd_name"));
+				vo.setPdSize(rs.getString("pd_size"));
+				vo.setPdColor(rs.getString("pd_color"));
+				vo.setPdPrice(rs.getString("pd_price"));
+				vo.setPdImage1(rs.getString("pd_image1"));
+				vo.setPdImage2(rs.getString("pd_image2"));
+				vo.setPdImage3(rs.getString("pd_image3"));
+				vo.setPdContent(rs.getString("pd_content"));
+				products.add(vo);
 
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			} finally {
-				close();
 			}
-			return members;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
 		}
-		return null;
+		return products;
 	}
 
 	@Override
@@ -53,9 +55,28 @@ public class ProductServiceImpl extends DAO implements ProductService {
 	@Override
 	public int insertProduct(ProductVO vo) {
 		// 상품등록
-		return 0;
-	}
+		String sql = "insert into product values(?,?,?,?,?,?,?,?)";
+		int r = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getPdImage1());
+			psmt.setString(2, vo.getPdid());
+			psmt.setString(3, vo.getPdCategory());
+			psmt.setString(4, vo.getPdName());
+			psmt.setString(5, vo.getPdSize());
+			psmt.setString(6, vo.getPdColor());
+			psmt.setString(7, vo.getPdPrice());
+			psmt.setString(8, vo.getPdContent());
+			r = psmt.executeUpdate();
+			System.out.println(r + "건 등록.");
 
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return r;
+	}
 	@Override
 	public int updateProduct(ProductVO vo) {
 		// 상품수정
@@ -72,6 +93,19 @@ public class ProductServiceImpl extends DAO implements ProductService {
 	public ProductVO loginCheck(ProductVO vo) {
 		// 관리자 체크
 		return null;
+	}
+
+	private void close() {
+		try {
+			if (rs != null)
+				rs.close();
+			if (psmt != null)
+				psmt.close();
+			if (conn != null)
+				conn.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

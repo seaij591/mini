@@ -1,6 +1,7 @@
 package com.shop.product.vo;
 
 public class ProductVO {
+	private String pdid;
 	private String pdCategory;
 	private String pdName;
 	private String pdSize;
@@ -12,6 +13,12 @@ public class ProductVO {
 	private String pdContent;
 	
 	
+	public String getPdid() {
+		return pdid;
+	}
+	public void setPdid(String pdid) {
+		this.pdid = pdid;
+	}
 	public String getPdCategory() {
 		return pdCategory;
 	}
