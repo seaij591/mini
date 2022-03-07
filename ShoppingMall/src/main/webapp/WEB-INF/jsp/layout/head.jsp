@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
 <!-- Page Preloder -->
@@ -59,6 +60,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-md-3">
@@ -89,6 +91,14 @@
 								<li><a href="./inquiry.do">문의</a></li>
 								<li><a href="./support.do">고객지원센터</a></li>
 							</ul></li>
+
+						<c:if test="${id eq 'admin'}">
+							<li><a href="#">관리자메뉴</a>
+								<ul class="dropdown">
+									<li><a href="#">상품등록/수정</a></li>
+									<li><a href="#">회원리스트</a></li>
+								</ul></li>
+						</c:if>
 
 					</ul>
 				</nav>
