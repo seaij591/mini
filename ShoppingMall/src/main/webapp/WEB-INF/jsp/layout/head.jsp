@@ -49,7 +49,7 @@
 							} else {
 							%>
 
-							<li><a href="<%=request.getContextPath()%>/logout.do"
+							<li><a href="<%=request.getContextPath()%>/memberLogOut.do"
 								class="button alt">LOG OUT</a></li>
 							<%
 							}

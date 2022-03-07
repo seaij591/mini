@@ -5,7 +5,6 @@
 <script src="js/signup/popper.js"></script>
 <script src="js/signup/bootstrap.min.js"></script>
 <script src="js/signup/main.js"></script>
-
 <script>
 	$(function () {
 		$('#memberId').change(function () {
@@ -88,7 +87,20 @@
 
 	}
 </script>
-
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+window.onload = function(){
+    document.getElementById("memberAddress").addEventListener("click", function(){ //주소입력칸을 클릭하면
+        //카카오 지도 발생
+        new daum.Postcode({
+            oncomplete: function(data) { //선택시 입력값 세팅
+                document.getElementById("memberAddress").value = data.address; // 주소 넣기
+                document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
+            }
+        }).open();
+    });
+}
+</script>
 <html>
 <head>
 <title>Sign Up 10</title>
@@ -133,7 +145,7 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group d-flex align-items-center">
-											<label class="label" for="name">아이디</label> 
+											<label class="label" for="id">아이디</label> 
 											<input type="text" id="memberId" name="memberId" class="form-control" 
 												   placeholder="Full Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 												
@@ -143,7 +155,7 @@
 									
 									<div class="col-md-12">
 										<div class="form-group d-flex align-items-center">
-											<label class="label" for="email">비밀번호</label> 
+											<label class="label" for="password">비밀번호</label> 
 											<input type="password" id="memberPassword" name="memberPassword" class="form-control"
 												placeholder="Password">
 										</div>
@@ -151,21 +163,27 @@
 									
 									<div class="col-md-12">
 										<div class="form-group d-flex align-items-center">
-											<label class="label" for="phone">비밀번호 확인</label> 
+											<label class="label" for="passwordcheck">비밀번호 확인</label> 
 											<input type="password" id="memberPassword1" name="memberPassword1" class="form-control" placeholder="Password">
 										</div>
 									</div>
 									
 									<div class="col-md-12">
 										<div class="form-group d-flex align-items-center">
-											<label class="label" for="phone">이름</label> 
+											<label class="label" for="name">이름</label> 
 											<input type="text" id="memberName" name="memberName" class="form-control" placeholder="홍길동">
 										</div>
 									</div>
 									<div class="col-md-12">
 										<div class="form-group d-flex align-items-center">
-											<label class="label" for="password">주소</label> 
-											<input type="text" id="memberAddress" name="memberAddress" class="form-control" placeholder="대구 중구...">
+											<label class="label" for="address">주소</label> 
+											<input type="text" id="memberAddress" name="memberAddress" readonly />
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group d-flex align-items-center">
+											<label class="label" for="detailaddress">상세주소</label> 
+											<input type="text" id="detailAddress" name="detailAddress" class="form-control" placeholder="OOO동OOO호 또는 몇층">
 										</div>
 									</div>
 

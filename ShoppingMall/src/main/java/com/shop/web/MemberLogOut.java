@@ -15,5 +15,4 @@ public class MemberLogOut implements DbCommand {
 		session.invalidate();  //세션을 삭제한다
 		return "main.do";
 	}
-
 }

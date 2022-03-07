@@ -12,16 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.shop.community.inquiry;
 import com.shop.community.support;
-
 import com.shop.dbtest.notice.web.Notice;
 import com.shop.dbtest.notice.web.NoticeForm;
 import com.shop.dbtest.notice.web.NoticeList;
 import com.shop.dbtest.notice.web.NoticeListPaging;
 import com.shop.dbtest.notice.web.NoticeWrite;
-
-import com.shop.login.Signup;
 import com.shop.login.MemberLogin;
-import com.shop.login.MemberLogout;
+import com.shop.login.Signup;
 import com.shop.web.About;
 import com.shop.web.MemberLogOut;
 import com.shop.web.Shop;
@@ -57,11 +54,10 @@ public class FrontController extends HttpServlet {
 
 		map.put("/login.do", new Login()); // 로그인폼 호출
 		map.put("/memberLogin.do", new MemberLogin());// 로그인처리
-		map.put("/logout.do", new MemberLogout()); // 로그아웃 처리
+		map.put("/memberLogOut.do", new MemberLogOut()); // 로그아웃 처리
 		map.put("/signup.do", new Signup()); // 회원가입폼 호출
 		map.put("/idCheck.do", new idCheck());// 아이디 중복 체크
 		map.put("/memberJoin.do", new memberJoin()); // 회원가입 처리
-		map.put("/memberLogOut.do", new MemberLogOut()); // 로그아웃 처리
 
 	}
 

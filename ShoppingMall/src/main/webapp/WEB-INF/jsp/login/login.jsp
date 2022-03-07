@@ -14,7 +14,6 @@
 			frm.memberPassword.focus();
 			return false;
 		}
-		
 		frm.submit();
 	}
 	
@@ -76,8 +75,8 @@
 										required>
 								</div>
 								<div class="form-group">
-									<button type="button" onclick="formCheck()"
-										class="form-control btn btn-primary rounded submit px-3">로그인</button>
+									<input type="button" onclick="formCheck()"
+										class="form-control btn btn-primary rounded submit px-3" value="로그인">
 								</div>
 								
 									<div>

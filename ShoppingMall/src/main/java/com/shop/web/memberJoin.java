@@ -21,8 +21,11 @@ public class memberJoin implements DbCommand {
 		String id = request.getParameter("memberId");
 		String name = request.getParameter("memberName");
 		String pass = request.getParameter("memberPassword");
-		String addr = request.getParameter("memberAddress");
-
+		String addr1 = request.getParameter("memberAddress");
+		String deaddr = request.getParameter("detailAddress");
+		
+		String addr = addr1 + " " + deaddr;
+		
 		MemberVO member = new MemberVO();
 		member.setMemberId(id);
 		member.setMemberName(name);
