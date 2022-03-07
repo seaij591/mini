@@ -63,6 +63,7 @@ public class FrontController extends HttpServlet {
 		
 		//관리자
 		map.put("/productFrom.do", new ProductFrom());
+		
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
