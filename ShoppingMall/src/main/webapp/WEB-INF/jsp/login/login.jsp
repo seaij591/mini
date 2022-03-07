@@ -62,9 +62,8 @@
 									
 								</div>
 							</div>
-<<<<<<< HEAD
-							<form action="main.do" class="signin-form">
-=======
+
+
 							<div>
 							<form id="frm" name="frm" action="memberLogin.do" method="post">
 
