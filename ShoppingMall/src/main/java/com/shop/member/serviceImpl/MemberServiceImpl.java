@@ -138,7 +138,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, vo.getMemberName());
-			psmt.setString(2,);
+			psmt.setString(2, vo.getMemberTel());
 			
 		}catch(SQLException e) {
 			e.printStackTrace();
