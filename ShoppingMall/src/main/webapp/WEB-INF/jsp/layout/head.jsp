@@ -95,7 +95,7 @@
 						<c:if test="${id eq 'admin'}">
 							<li><a href="#">Admin Menu</a>
 								<ul class="dropdown">
-									<li><a href="./productFrom.do">상품등록/수정</a></li>
+									<li><a href="./productForm.do">상품등록/수정</a></li>
 									<li><a href="./memberList.do">회원리스트</a></li>
 								</ul></li>
 						</c:if>

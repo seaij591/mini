@@ -25,7 +25,7 @@ public class ProductServiceImpl extends DAO implements ProductService {
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new ProductVO();
-				vo.setPdid(rs.getString("pd_id"));
+				vo.setPdId(rs.getString("pd_id"));
 				vo.setPdCategory(rs.getString("pd_category"));
 				vo.setPdName(rs.getString("pd_name"));
 				vo.setPdSize(rs.getString("pd_size"));
@@ -55,18 +55,20 @@ public class ProductServiceImpl extends DAO implements ProductService {
 	@Override
 	public int insertProduct(ProductVO vo) {
 		// 상품등록
-		String sql = "insert into product values(?,?,?,?,?,?,?,?)";
+		String sql = "insert into product(pd_image1,pd_image2,pd_image3,pd_id,pd_category,pd_name,pd_size,pd_color,pd_price,pd_content) values(?,?,?,?,?,?,?,?,?,?)";
 		int r = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, vo.getPdImage1());
-			psmt.setString(2, vo.getPdid());
-			psmt.setString(3, vo.getPdCategory());
-			psmt.setString(4, vo.getPdName());
-			psmt.setString(5, vo.getPdSize());
-			psmt.setString(6, vo.getPdColor());
-			psmt.setString(7, vo.getPdPrice());
-			psmt.setString(8, vo.getPdContent());
+			psmt.setString(2, vo.getPdImage2());
+			psmt.setString(3, vo.getPdImage3());
+			psmt.setString(4, vo.getPdId());
+			psmt.setString(5, vo.getPdCategory());
+			psmt.setString(6, vo.getPdName());
+			psmt.setString(7, vo.getPdSize());
+			psmt.setString(8, vo.getPdColor());
+			psmt.setString(9, vo.getPdPrice());
+			psmt.setString(10, vo.getPdContent());
 			r = psmt.executeUpdate();
 			System.out.println(r + "건 등록.");
 

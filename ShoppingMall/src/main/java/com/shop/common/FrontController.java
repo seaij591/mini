@@ -19,7 +19,11 @@ import com.shop.dbtest.notice.web.NoticeListPaging;
 import com.shop.dbtest.notice.web.NoticeWrite;
 import com.shop.login.MemberLogin;
 import com.shop.login.Signup;
+import com.shop.product.ProductForm;
 import com.shop.product.ProductFrom;
+import com.shop.product.ProductInsert;
+import com.shop.product.ProductInsertForm;
+import com.shop.product.ProductSelect;
 import com.shop.web.About;
 import com.shop.web.MemberList;
 import com.shop.web.MemberLogOut;
@@ -63,7 +67,15 @@ public class FrontController extends HttpServlet {
 		
 		//관리자
 		map.put("/productFrom.do", new ProductFrom()); //물품등록
+		map.put("/productForm.do", new ProductForm()); //상품 리스트조회폼
+		map.put("/productInsertForm.do", new ProductInsertForm()); //상품등록 폼
 		map.put("/memberList.do", new MemberList()); //회원 리스트 출력
+		//상품등록
+		map.put("/productInsert.do", new ProductInsert()); //등록
+		map.put("/productSelect.do", new ProductSelect()); //조회
+		//map.put("/bulletinUpdate.do", new BulletinUpdate()); //수정
+		//map.put("/bulletinDelete.do", new BulletinDelete()); //삭제
+		//
 		
 	}
 
@@ -74,7 +86,6 @@ public class FrontController extends HttpServlet {
 		String uri = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String path = uri.substring(contextPath.length());
-
 		DbCommand dbCommand = map.get(path);
 		String viewPage = dbCommand.execute(request, response);
 
