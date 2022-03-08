@@ -585,7 +585,7 @@ ol {
 
 .hero__items {
 	height: 800px;
-	padding-top: 230px;
+	padding-top: 50px;
 }
 .hero__items{height:500px;overflow:hidden;}
 
@@ -647,7 +647,7 @@ ol {
 }
 
 .hero__social {
-	margin-top: 190px;
+	margin-top: 90px;
 }
 
 .hero__social a {
@@ -875,7 +875,7 @@ ol {
 -----------------------*/
 
 .instagram {
-	padding-bottom: 0;
+	padding-bottom: 55px;
 }
 
 .instagram__pic__item {
