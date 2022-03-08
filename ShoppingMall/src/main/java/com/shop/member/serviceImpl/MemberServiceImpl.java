@@ -13,7 +13,7 @@ import com.shop.member.vo.MemberVO;
 public class MemberServiceImpl extends DAO implements MemberService {
 	private PreparedStatement psmt;
 	private ResultSet rs;
-	
+
 	@Override
 	public List<MemberVO> selectMemberList() {
 		List<MemberVO> members = new ArrayList<MemberVO>();
@@ -39,7 +39,6 @@ public class MemberServiceImpl extends DAO implements MemberService {
 		}
 		return members;
 	}
-
 
 	@Override
 	public MemberVO selectMember(MemberVO vo) {
@@ -131,21 +130,44 @@ public class MemberServiceImpl extends DAO implements MemberService {
 		}
 	}
 
-
-	@Override
-	public MemberVO findId(MemberVO vo) {
-		String sql = "SELECT * FROM members WHERE member_name=? and member_phone=?";
+	public String findId(String name, String tel) {
+		String sql = "SELECT * FROM members WHERE member_name=? and member_tel=?";
+		String findId = null;
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, vo.getMemberName());
-			psmt.setString(2, vo.getMemberTel());
-			
+			psmt.setString(1, name);
+			psmt.setString(2, tel);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				findId = rs.getString("member_id");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return findId;
+	}
+	
+	public String findPw(String id, String name, String tel) {
+		String sql = "SELECT * FROM members WHERE member_id=? and member_name=? and member_tel=?";
+		String findPw = null;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			psmt.setString(2, name);
+			psmt.setString(3, tel);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				findPw = rs.getString("member_password");
+			}
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
 			close();
 		}
-		return vo;
+		return findPw;
 	}
 
 }

@@ -17,6 +17,10 @@ import com.shop.dbtest.notice.web.NoticeForm;
 import com.shop.dbtest.notice.web.NoticeList;
 import com.shop.dbtest.notice.web.NoticeListPaging;
 import com.shop.dbtest.notice.web.NoticeWrite;
+import com.shop.find.FindId;
+import com.shop.find.FindIdResult;
+import com.shop.find.FindPw;
+import com.shop.find.FindPwResult;
 import com.shop.login.MemberLogin;
 import com.shop.login.Signup;
 import com.shop.product.ProductForm;
@@ -28,8 +32,8 @@ import com.shop.web.About;
 import com.shop.web.MemberList;
 import com.shop.web.MemberLogOut;
 import com.shop.web.Shop;
-import com.shop.web.idCheck;
-import com.shop.web.memberJoin;
+import com.shop.web.IdCheck;
+import com.shop.web.MemberJoin;
 
 
 //@WebServlet("/FrontController")
@@ -62,11 +66,13 @@ public class FrontController extends HttpServlet {
 		map.put("/login.do", new Login()); // 로그인폼 호출
 		map.put("/memberLogin.do", new MemberLogin());// 로그인처리
 		map.put("/signup.do", new Signup()); // 회원가입폼 호출
-		map.put("/idCheck.do", new idCheck());// 아이디 중복 체크
-		map.put("/memberJoin.do", new memberJoin()); // 회원가입 처리
+		map.put("/idCheck.do", new IdCheck());// 아이디 중복 체크
+		map.put("/memberJoin.do", new MemberJoin()); // 회원가입 처리
 		map.put("/memberLogOut.do", new MemberLogOut()); // 로그아웃 처리
-		map.put("/findId.do", new findId()); //아이디 찾기
-		
+		map.put("/findId.do", new FindId()); //아이디 조회폼
+		map.put("/findIdResult.do", new FindIdResult()); //아이디 조회 후 출력
+		map.put("/findPw.do", new FindPw()); // 비밀번호 조회 폼
+		map.put("/findPwResult.do", new FindPwResult()); //비밀번호 조회 후 출력
 		//관리자
 		map.put("/productFrom.do", new ProductFrom()); //물품등록
 		map.put("/productForm.do", new ProductForm()); //상품 리스트조회폼

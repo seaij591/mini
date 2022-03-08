@@ -10,7 +10,7 @@ import com.shop.member.serviceImpl.MemberServiceImpl;
 import com.shop.member.vo.MemberVO;
 
 
-public class memberJoin implements DbCommand {
+public class MemberJoin implements DbCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
@@ -21,9 +21,12 @@ public class memberJoin implements DbCommand {
 		String id = request.getParameter("memberId");
 		String name = request.getParameter("memberName");
 		String pass = request.getParameter("memberPassword");
-		String addr = request.getParameter("memberAddress");
+		String addr1 = request.getParameter("memberAddress");
+		String addr2 = request.getParameter("detailAddress");
 		String tel = request.getParameter("memberTel");
-
+		
+		String addr = addr1 + " " + addr2;
+		
 		MemberVO member = new MemberVO();
 		member.setMemberId(id);
 		member.setMemberName(name);
