@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -144,37 +145,37 @@
 
 <!---------------------- 상품목록;. ------------------------------->
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                            <c:forEach var="vo" items="${members }">
-                                <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
-                                    <ul class="product__hover">
-                                        <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                        <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a>
-                                        </li>
-                                        <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>${product.name}</h6>
+						<div class="col-lg-4 col-md-6 col-sm-6">
+						<c:forEach var="vo" items="${product}">
+							<div class="product__item">
+									<div class="product__item__pic set-bg"
+										data-setbg="upload/${vo.pdImage1 }">
+										<ul class="product__hover">
+											<li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+											<li><a href="#"><img src="img/icon/compare.png"
+													alt=""> <span>Compare</span></a></li>
+											<li><a href="#"><img src="img/icon/search.png"
+													alt=""></a></li>
+										</ul>
+									</div>
+									
+									<div class="product__item__text">
+										<h6>${vo.pdName}</h6>
 
-                                    <h5>$67.24</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-4">
-                                            <input type="radio" id="pc-4">
-                                        </label>
-                                        <label class="active black" for="pc-5">
-                                            <input type="radio" id="pc-5">
-                                        </label>
-                                        <label class="grey" for="pc-6">
-                                            <input type="radio" id="pc-6">
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                </div>
+										<h5>${vo.pdPrice}원</h5>
+										<div class="product__color__select">
+											<label for="pc-4"> <input type="radio" id="pc-4">
+											</label> <label class="active black" for="pc-5"> <input
+												type="radio" id="pc-5">
+											</label> <label class="grey" for="pc-6"> <input type="radio"
+												id="pc-6">
+											</label>
+										</div>
+									</div>
+							</div>
+									</c:forEach>
+						</div>
+					</div>
             </div>
         </div>
     </section>
