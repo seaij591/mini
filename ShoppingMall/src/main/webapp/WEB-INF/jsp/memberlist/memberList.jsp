@@ -19,6 +19,7 @@
 				<th align="center">비밀번호</th>
 				<th align="center">이름</th>
 				<th align="center">주소</th>
+				<th align="center">전화번호</th>
 			</tr>
 			<c:forEach var="vo" items="${members }">
 				<tr>
@@ -26,6 +27,8 @@
 					<td align="center">${vo.memberPassword}</td>
 					<td align="center">${vo.memberName }</td>
 					<td align="center">${vo.memberAddress }</td>
+					<td align="center">${vo.memberTel }</td>
+					
 					
 				</tr>
 			</c:forEach>
