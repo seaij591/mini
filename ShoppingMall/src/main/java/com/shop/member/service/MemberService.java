@@ -11,4 +11,5 @@ public interface MemberService {
 	public int updateMember(MemberVO vo);
 	public int deleteMember(MemberVO vo);
 	public MemberVO loginCheck(MemberVO vo);
+	public MemberVO findId(MemberVO vo);
 }

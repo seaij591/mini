@@ -129,4 +129,21 @@ public class MemberServiceImpl extends DAO implements MemberService {
 		}
 	}
 
+
+	@Override
+	public MemberVO findId(MemberVO vo) {
+		String sql = "SELECT * FROM members WHERE member_name=? and member_phone=?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getMemberName());
+			psmt.setString(2,);
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return vo;
+	}
+
 }
