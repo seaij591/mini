@@ -28,6 +28,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 				vo.setMemberPassword(rs.getString("member_password"));
 				vo.setMemberName(rs.getString("member_name"));
 				vo.setMemberAddress(rs.getString("member_address"));
+				vo.setMemberTel(rs.getString("member_tel"));
 				members.add(vo);
 
 			}
@@ -49,7 +50,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 	@Override
 	public int insertMember(MemberVO vo) {
 		// TODO Auto-generated method stub
-		String sql = "insert into members values(?,?,?,?)";
+		String sql = "insert into members values(?,?,?,?,?)";
 		int r = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -57,6 +58,7 @@ public class MemberServiceImpl extends DAO implements MemberService {
 			psmt.setString(2, vo.getMemberName());
 			psmt.setString(3, vo.getMemberPassword());
 			psmt.setString(4, vo.getMemberAddress());
+			psmt.setString(5, vo.getMemberTel());
 			r = psmt.executeUpdate();
 			System.out.println(r + "건 입력.");
 

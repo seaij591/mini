@@ -5,10 +5,22 @@ public class MemberVO {
 	private String memberName;
 	private String memberPassword;
 	private String memberAddress;
+	private String memberTel;
 	
 	public MemberVO() {
 		// TODO Auto-generated constructor stub
 	}
+
+	
+	public String getMemberTel() {
+		return memberTel;
+	}
+
+
+	public void setMemberTel(String memberTel) {
+		this.memberTel = memberTel;
+	}
+
 
 	public String getMemberId() {
 		return memberId;
