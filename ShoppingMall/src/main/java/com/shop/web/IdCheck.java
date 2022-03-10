@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.shop.common.DbCommand;
 import com.shop.member.serviceImpl.MemberServiceImpl;
 
-public class idCheck implements DbCommand {
+public class IdCheck implements DbCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
