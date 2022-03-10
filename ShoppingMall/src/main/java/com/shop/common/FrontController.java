@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.shop.community.inquiry;
 import com.shop.community.support;
+import com.shop.dbtest.cart.web.CartList;
 import com.shop.dbtest.notice.web.Notice;
 import com.shop.dbtest.notice.web.NoticeForm;
 import com.shop.dbtest.notice.web.NoticeList;
@@ -28,14 +29,12 @@ import com.shop.product.ProductInsert;
 import com.shop.product.ProductInsertForm;
 import com.shop.product.ProductSelect;
 import com.shop.web.About;
+import com.shop.web.IdCheck;
+import com.shop.web.MemberJoin;
 import com.shop.web.MemberList;
 import com.shop.web.MemberLogOut;
 import com.shop.web.Shop;
-
 import com.shop.web.Shopdetails;
-
-import com.shop.web.IdCheck;
-import com.shop.web.MemberJoin;
 
 
 
@@ -85,6 +84,9 @@ public class FrontController extends HttpServlet {
 		map.put("/productSelect.do", new ProductSelect()); //조회
 		//map.put("/bulletinUpdate.do", new BulletinUpdate()); //수정
 		//map.put("/bulletinDelete.do", new BulletinDelete()); //삭제
+		
+		map.put("/cartList.do", new CartList()); //장바구니 페이지
+		//장바구니 추가
 		
 		//상품정보
 		map.put("/shop.do", new Shop()); // shop 정보

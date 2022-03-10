@@ -76,13 +76,15 @@
 
 						<li><a href="./about.do">About Us</a></li>
 
+											<c:if test="${not empty id and id ne 'admin'}">		
 						<li><a href="#">My Page</a>
 							<ul class="dropdown">
-								<li><a href="./.html">장바구니</a></li>
+								<li><a href="cartList.do">장바구니</a></li>
 								<li><a href="./.html">주문내역</a></li>
 								<li><a href="./.html">좋아요</a></li>
 								<li><a href="./.html">최근 본 상품</a></li>
 							</ul></li>
+					</c:if>
 
 						<li><a href="#">Community</a>
 							<ul class="dropdown">
