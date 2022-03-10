@@ -7,14 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-	<%-- <script src="${pageContext.request.contextPath }/ckeditor/ckeditor.js"></script>
-	<script>
-		$(function () {
-			CKEDITOR.replace('pdImage1', {
-				filebrowserUploadUrl: "${pageContext.request.contextPath}/fileUpload"
-			})
-		});
-	</script> --%>
+
 </head>
 
 <body>
@@ -34,20 +27,16 @@
 				<td><input type="text" name="pdCategory" id="pdCategory"></td>
 			</tr>
 			<tr>
-				<td>사이즈:</td>
-				<td><input type="text" name="pdSize" id="pdSize"></td>
-			</tr>
-			<tr>
-				<td>컬러:</td>
-				<td><input type="text" name="pdColor" id="pdColor"></td>
-			</tr>
-			<tr>
 				<td>가격:</td>
 				<td><input type="text" name="pdPrice" id="pdPrice"></td>
 			</tr>
 			<tr>
 				<td>내용:</td>
-				<td><input type="text" name="pdContent" id="pdContent"></td>
+				<td><input type="text" name="pdContent1" id="pdContent1"></td>
+			</tr>
+			<tr>
+				<td>메인내용:</td>
+				<td><input type="text" name="pdContent2" id="pdContent2"></td>
 			</tr>
 			<tr>
 				<td>이미지1:</td>

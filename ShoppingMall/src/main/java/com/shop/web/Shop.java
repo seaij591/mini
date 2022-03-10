@@ -16,10 +16,9 @@ public class Shop implements DbCommand {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		ProductService service = new ProductServiceImpl();
-		List<ProductVO> list = service.selectProductList();
+		List<ProductVO> list = service.selectShopForm();
 		request.setAttribute("product", list);
 		
 		return "shopinfo/shopmain.tiles";
 	}
-
 }

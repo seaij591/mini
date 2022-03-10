@@ -28,6 +28,7 @@ import com.shop.web.About;
 import com.shop.web.MemberList;
 import com.shop.web.MemberLogOut;
 import com.shop.web.Shop;
+import com.shop.web.Shopdetails;
 import com.shop.web.idCheck;
 import com.shop.web.memberJoin;
 
@@ -46,7 +47,6 @@ public class FrontController extends HttpServlet {
 		// TODO 호출명 저장소
 		map.put("/main.do", new MainPage()); // 시작페이지
 		map.put("/about.do", new About()); // 회사소개
-		map.put("/shop.do", new Shop()); // shop 정보
 
 		// 커뮤니티
 		map.put("/support.do", new support()); // 고객지원센터 페이지
@@ -66,16 +66,19 @@ public class FrontController extends HttpServlet {
 		map.put("/memberLogOut.do", new MemberLogOut()); // 로그아웃 처리
 		
 		//관리자
-		map.put("/productFrom.do", new ProductFrom()); //물품등록
 		map.put("/productForm.do", new ProductForm()); //상품 리스트조회폼
 		map.put("/productInsertForm.do", new ProductInsertForm()); //상품등록 폼
 		map.put("/memberList.do", new MemberList()); //회원 리스트 출력
+		
 		//상품등록
 		map.put("/productInsert.do", new ProductInsert()); //등록
 		map.put("/productSelect.do", new ProductSelect()); //조회
 		//map.put("/bulletinUpdate.do", new BulletinUpdate()); //수정
 		//map.put("/bulletinDelete.do", new BulletinDelete()); //삭제
-		//
+		
+		//상품정보
+		map.put("/shop.do", new Shop()); // shop 정보
+		map.put("/shopdetails.do", new Shopdetails()); //상품 상세정보
 		
 	}
 

@@ -144,9 +144,10 @@
                     </div>
 
 <!---------------------- 상품목록;. ------------------------------->
+                    <c:forEach var="vo" items="${product}">
                     <div class="row">
 						<div class="col-lg-4 col-md-6 col-sm-6">
-						<c:forEach var="vo" items="${product}">
+						
 							<div class="product__item">
 									<div class="product__item__pic set-bg"
 										data-setbg="upload/${vo.pdImage1 }">
@@ -154,7 +155,7 @@
 											<li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
 											<li><a href="#"><img src="img/icon/compare.png"
 													alt=""> <span>Compare</span></a></li>
-											<li><a href="#"><img src="img/icon/search.png"
+											<li><a href="./shopdetails.do"><img src="img/icon/search.png"
 													alt=""></a></li>
 										</ul>
 									</div>
@@ -172,10 +173,11 @@
 											</label>
 										</div>
 									</div>
-							</div>
-									</c:forEach>
+								</div>
+							
 						</div>
 					</div>
+					</c:forEach>
             </div>
         </div>
     </section>

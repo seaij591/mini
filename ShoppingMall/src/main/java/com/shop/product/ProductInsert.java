@@ -51,10 +51,9 @@ public class ProductInsert implements DbCommand {
 			String pdId = multi.getParameter("pdId");
 			String pdCategory = multi.getParameter("pdCategory");
 			String pdName = multi.getParameter("pdName");
-			String pdSize = multi.getParameter("pdSize");
-			String pdColor = multi.getParameter("pdColor");
 			String pdPrice = multi.getParameter("pdPrice");
-			String pdContent = multi.getParameter("pdContent");
+			String pdContent1 = multi.getParameter("pdContent1");
+			String pdContent2 = multi.getParameter("pdContent2");
 
 			String fileN = null;
 			ProductVO vo = new ProductVO();
@@ -77,10 +76,9 @@ public class ProductInsert implements DbCommand {
 			vo.setPdName(pdName);
 			vo.setPdId(pdId);
 			vo.setPdCategory(pdCategory);
-			vo.setPdSize(pdSize);
-			vo.setPdColor(pdColor);
 			vo.setPdPrice(pdPrice);
-			vo.setPdContent(pdContent);
+			vo.setPdContent1(pdContent1);
+			vo.setPdContent2(pdContent2);
 //		vo.setPdImage1(pdImage1);
 //		vo.setPdImage2(pdImage2);
 //		vo.setPdImage3(pdImage3);
