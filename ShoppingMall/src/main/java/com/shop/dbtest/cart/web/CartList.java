@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.shop.common.DbCommand;
 import com.shop.dbtest.cart.serviceImpl.CartServiceImpl;
-import com.shop.dbtest.cart.vo.CartVO;
+import com.shop.dbtest.cart.vo.NewCartVO;
 
 public class CartList implements DbCommand {
 
@@ -16,9 +16,8 @@ public class CartList implements DbCommand {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		CartServiceImpl dao = new CartServiceImpl();
-		List<CartVO> list = new ArrayList<CartVO>();
-		
-		list = dao.cartSelectList();
+		List<NewCartVO> list = new ArrayList<NewCartVO>();
+		list = dao.newCartSelectList();
 		request.setAttribute("cart", list);
 		return "cart/cartList.tiles";
 	}

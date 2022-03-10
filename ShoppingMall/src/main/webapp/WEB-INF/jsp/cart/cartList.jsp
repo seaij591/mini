@@ -48,21 +48,21 @@
 											<img src="img/shopping-cart/cart-1.jpg" alt="">
 										</div>
 										<div class="product__cart__item__text">
-											<h6>T-shirt Contrast Pocket</h6>
-											<h5>$98.49</h5>
+											<h6>${vo.pd_name}</h6>
+											<h5>${vo.pd_price}</h5>
 										</div>
 									</td>
 									<td class="quantity__item">
 										<div class="quantity">
 											<div class="pro-qty-2">
-												<input type="text" id="pd_quantity" name="pd_quantity" value="1">
+												<input type="text" id="pd_quantity" name="pd_quantity" value="${vo.pd_quantity}">
 											</div>
 										</div>
 									</td>
 									<td class="cart__price">$ 30.00</td>
 									<td class="cart__close"><i class="fa fa-close"></i></td>
 								</tr>
-								</c:forEach>
+							</c:forEach>
 							</tbody>
 						</table>
 					</div>
