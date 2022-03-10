@@ -7,7 +7,7 @@
 <body>
  
     <!-- Shop Details Section Begin -->
-   <c:forEach var="vo" items="${product}">
+  
     <section class="shop-details">
       
         <div class="product__details__pic">
@@ -26,19 +26,19 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="upload/${vo.pdImage1 }">
+                                    <div class="product__thumb__pic set-bg" data-setbg="upload/${product.pdImage1 }">
                                     </div>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="upload/${vo.pdImage2 }">
+                                    <div class="product__thumb__pic set-bg" data-setbg="upload/${product.pdImage2 }">
                                     </div>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="upload/${vo.pdImage3 }">
+                                    <div class="product__thumb__pic set-bg" data-setbg="upload/${product.pdImage3 }">
                                     </div>
                                 </a>
                             </li>
@@ -48,17 +48,17 @@
                         <div class="tab-content">
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="upload/${vo.pdImage1 }" alt="">
+                                    <img src="upload/${product.pdImage1 }" alt="">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="upload/${vo.pdImage2 }" alt="">
+                                    <img src="upload/${product.pdImage2 }" alt="">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__pic__item">
-                                    <img src="upload/${vo.pdImage3 }" alt="">
+                                    <img src="upload/${product.pdImage3 }" alt="">
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-4" role="tabpanel">
@@ -77,10 +77,10 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-8">
                         <div class="product__details__text">
-                            <h4>${vo.pdName }</h4>
+                            <h4>${product.pdName }</h4>
 
-                            <h3>${vo.pdPrice }원</h3>
-                            <p>${vo.pdContent1 }</p>
+                            <h3>${product.pdPrice }원</h3>
+                            <p>${product.pdContent1 }</p>
                             <div class="product__details__option">
                                 <div class="product__details__option__size">
                                     <span>Size:</span>
@@ -135,7 +135,7 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tabs-5" role="tabpanel">
                                     <div class="product__details__tab__content">
-                                        <p class="note">${vo.pdContent2 }</p>
+                                        <p class="note">${product.pdContent2 }</p>
                                         
                                         </div>
                                         
@@ -148,7 +148,6 @@
             </div>
         </div>   
     </section>
-    </c:forEach>
     <!-- Shop Details Section End -->
 
 

@@ -48,8 +48,29 @@ public class ProductServiceImpl extends DAO implements ProductService {
 	@Override
 	public ProductVO selectProduct(ProductVO vo) {
 		// 단품조회
-		
-		return null;
+		String sql = "select * from product where pd_id = ?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getPdId());
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				vo = new ProductVO();
+				vo.setPdId(rs.getString("pd_id"));
+				vo.setPdCategory(rs.getString("pd_category"));
+				vo.setPdName(rs.getString("pd_name"));
+				vo.setPdPrice(rs.getString("pd_price"));
+				vo.setPdImage1(rs.getString("pd_image1"));
+				vo.setPdImage2(rs.getString("pd_image2"));
+				vo.setPdImage3(rs.getString("pd_image3"));
+				vo.setPdContent1(rs.getString("pd_content1"));
+				vo.setPdContent2(rs.getString("pd_content2"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return vo;
 	}
 
 	@Override
@@ -114,12 +135,13 @@ public class ProductServiceImpl extends DAO implements ProductService {
 		// 상품리스트 출력폼
 		List<ProductVO> products = new ArrayList<ProductVO>();
 		ProductVO vo;
-		String sql = "select pd_name, pd_category, pd_price, pd_image1, pd_image2, pd_image3, pd_content1 from product";
+		String sql = "select pd_id, pd_name, pd_category, pd_price, pd_image1, pd_image2, pd_image3, pd_content1 from product";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new ProductVO();
+				vo.setPdId(rs.getString("pd_id"));
 				vo.setPdName(rs.getString("pd_name"));
 				vo.setPdCategory(rs.getString("pd_category"));
 				vo.setPdPrice(rs.getString("pd_price"));
