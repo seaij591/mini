@@ -24,7 +24,6 @@ import com.shop.find.FindPwResult;
 import com.shop.login.MemberLogin;
 import com.shop.login.Signup;
 import com.shop.product.ProductForm;
-import com.shop.product.ProductFrom;
 import com.shop.product.ProductInsert;
 import com.shop.product.ProductInsertForm;
 import com.shop.product.ProductSelect;
@@ -32,14 +31,12 @@ import com.shop.web.About;
 import com.shop.web.MemberList;
 import com.shop.web.MemberLogOut;
 import com.shop.web.Shop;
-<<<<<<< HEAD
+
 import com.shop.web.Shopdetails;
-import com.shop.web.idCheck;
-import com.shop.web.memberJoin;
-=======
+
 import com.shop.web.IdCheck;
 import com.shop.web.MemberJoin;
->>>>>>> branch 'master' of https://github.com/seaij591/mini.git
+
 
 
 //@WebServlet("/FrontController")
