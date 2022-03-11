@@ -4,13 +4,13 @@ public class ProductVO {
 	private String pdId;
 	private String pdCategory;
 	private String pdName;
-	private String pdSize;
-	private String pdColor;
 	private String pdPrice;
 	private String pdImage1;
 	private String pdImage2;
 	private String pdImage3;
-	private String pdContent;
+	private String pdContent1;
+	private String pdContent2;
+	
 
 	public String getPdId() {
 		return pdId;
@@ -36,21 +36,6 @@ public class ProductVO {
 		this.pdName = pdName;
 	}
 
-	public String getPdSize() {
-		return pdSize;
-	}
-
-	public void setPdSize(String pdSize) {
-		this.pdSize = pdSize;
-	}
-
-	public String getPdColor() {
-		return pdColor;
-	}
-
-	public void setPdColor(String pdColor) {
-		this.pdColor = pdColor;
-	}
 
 	public String getPdPrice() {
 		return pdPrice;
@@ -84,19 +69,30 @@ public class ProductVO {
 		this.pdImage3 = pdImage3;
 	}
 
-	public String getPdContent() {
-		return pdContent;
+	public String getPdContent1() {
+		return pdContent1;
 	}
 
-	public void setPdContent(String pdContent) {
-		this.pdContent = pdContent;
+	public void setPdContent1(String pdContent1) {
+		this.pdContent1 = pdContent1;
+	}
+
+	public String getPdContent2() {
+		return pdContent2;
+	}
+
+	public void setPdContent2(String pdContent2) {
+		this.pdContent2 = pdContent2;
 	}
 
 	@Override
 	public String toString() {
-		return "ProductVO [pdId=" + pdId + ", pdCategory=" + pdCategory + ", pdName=" + pdName + ", pdSize=" + pdSize
-				+ ", pdColor=" + pdColor + ", pdPrice=" + pdPrice + ", pdImage1=" + pdImage1 + ", pdImage2=" + pdImage2
-				+ ", pdImage3=" + pdImage3 + ", pdContent=" + pdContent + "]";
+		return "ProductVO [pdId=" + pdId + ", pdCategory=" + pdCategory + ", pdName=" + pdName + ", pdPrice=" + pdPrice
+				+ ", pdImage1=" + pdImage1 + ", pdImage2=" + pdImage2 + ", pdImage3=" + pdImage3 + ", pdContent1="
+				+ pdContent1 + ", pdContent2=" + pdContent2 + "]";
 	}
+
+	
+	
 
 }

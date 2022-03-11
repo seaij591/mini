@@ -33,10 +33,10 @@ public class FileUpload extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 
 		System.out.println("doPost call()");
-		String path = "c:/tmp";
-
-		ServletContext sc = this.getServletContext();
-		path = sc.getRealPath("upload"); // 서버상경로.
+		String path = "";
+		String save = "/";
+		ServletContext sc = request.getSession().getServletContext();
+		path = sc.getRealPath(save); // 서버상경로.
 
 		MultipartRequest multi = //
 				new MultipartRequest(request, // 요청정보
@@ -58,7 +58,7 @@ public class FileUpload extends HttpServlet {
 
 		json.addProperty("uploaded", 1);
 		json.addProperty("fileName", fileN);
-		json.addProperty("url", request.getContextPath() + "/upload/" + fileN);
+		json.addProperty("url", "C:\\Users\\admin\\Downloads\\" + fileN);
 
 		response.getWriter().print(json);
 	}

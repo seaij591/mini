@@ -15,6 +15,7 @@ import com.shop.dbtest.inquiry.web.Inquiry;
 import com.shop.dbtest.inquiry.web.InquiryForm;
 import com.shop.dbtest.inquiry.web.InquiryList;
 import com.shop.dbtest.inquiry.web.InquiryWrite;
+import com.shop.dbtest.cart.web.CartList;
 import com.shop.dbtest.notice.web.Notice;
 import com.shop.dbtest.notice.web.NoticeForm;
 import com.shop.dbtest.notice.web.NoticeList;
@@ -27,17 +28,18 @@ import com.shop.find.FindPwResult;
 import com.shop.login.MemberLogin;
 import com.shop.login.Signup;
 import com.shop.product.ProductForm;
-import com.shop.product.ProductFrom;
 import com.shop.product.ProductInsert;
 import com.shop.product.ProductInsertForm;
 import com.shop.product.ProductSelect;
 import com.shop.web.About;
+import com.shop.web.IdCheck;
+import com.shop.web.MemberJoin;
 import com.shop.web.MemberList;
 import com.shop.web.MemberLogOut;
 import com.shop.web.Search;
 import com.shop.web.Shop;
-import com.shop.web.IdCheck;
-import com.shop.web.MemberJoin;
+import com.shop.web.Shopdetails;
+
 
 
 //@WebServlet("/FrontController")
@@ -54,7 +56,6 @@ public class FrontController extends HttpServlet {
 		// TODO 호출명 저장소
 		map.put("/main.do", new MainPage()); // 시작페이지
 		map.put("/about.do", new About()); // 회사소개
-		map.put("/shop.do", new Shop()); // shop 정보
 
 		// 커뮤니티
 		map.put("/support.do", new support()); // 고객지원센터 페이지
@@ -83,10 +84,10 @@ public class FrontController extends HttpServlet {
 		map.put("/findPw.do", new FindPw()); // 비밀번호 조회 폼
 		map.put("/findPwResult.do", new FindPwResult()); //비밀번호 조회 후 출력
 		//관리자
-		map.put("/productFrom.do", new ProductFrom()); //물품등록
 		map.put("/productForm.do", new ProductForm()); //상품 리스트조회폼
 		map.put("/productInsertForm.do", new ProductInsertForm()); //상품등록 폼
 		map.put("/memberList.do", new MemberList()); //회원 리스트 출력
+		
 		//상품등록
 		map.put("/productInsert.do", new ProductInsert()); //등록
 		map.put("/productSelect.do", new ProductSelect()); //조회
@@ -94,6 +95,12 @@ public class FrontController extends HttpServlet {
 		//map.put("/bulletinDelete.do", new BulletinDelete()); //삭제
 		
 		map.put("/search.do", new Search()); //검색기능
+		map.put("/cartList.do", new CartList()); //장바구니 페이지
+		//장바구니 추가
+		
+		//상품정보
+		map.put("/shop.do", new Shop()); // shop 정보
+		map.put("/shopdetails.do", new Shopdetails()); //상품 상세정보
 		
 	}
 

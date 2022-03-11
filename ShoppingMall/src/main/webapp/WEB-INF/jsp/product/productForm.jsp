@@ -18,10 +18,9 @@
 				<th align="center">상품번호</th>
 				<th align="center">카테고리</th>
 				<th align="center">이름</th>
-				<th align="center">사이즈</th>
-				<th align="center">컬러</th>
 				<th align="center">가격</th>
 				<th align="center">내용</th>
+				<th align="center">메인내용</th>
 				<th align="center">이미지1</th>
 				<th align="center">이미지2</th>
 				<th align="center">이미지3</th>
@@ -31,10 +30,9 @@
 					<td align="center">${vo.pdId}</td>
 					<td align="center">${vo.pdCategory}</td>
 					<td align="center">${vo.pdName }</td>
-					<td align="center">${vo.pdSize }</td>
-					<td align="center">${vo.pdColor }</td>
 					<td align="center">${vo.pdPrice }원</td>
-					<td align="center">${vo.pdContent }</td>	
+					<td align="center">${vo.pdContent1 }</td>
+					<td align="center">${vo.pdContent2 }</td>	
 					<td align="center">${vo.pdImage1 }</td>
 					<td align="center">${vo.pdImage2 }</td>
 					<td align="center">${vo.pdImage3 }</td>

@@ -18,11 +18,11 @@
 				<div class="footer__widget">
 					<h6>Shopping</h6>
 					<ul>
-						<li><a href="#">Outer</a></li>
-						<li><a href="#">Top</a></li>
-						<li><a href="#">Pants</a></li>
-						<li><a href="#">Shirts</a></li>
-						<li><a href="#">Sports</a></li>
+						<li><a href="shop.do?cat=Outer">Outer</a></li>
+						<li><a href="shop.do?cat=Top">Top</a></li>
+						<li><a href="shop.do?cat=Pants">Pants</a></li>
+						<li><a href="shop.do?cat=Shoes">Shirts</a></li>
+						<li><a href="shop.do?cat=Training">Sports</a></li>
 					</ul>
 				</div>
 			</div>

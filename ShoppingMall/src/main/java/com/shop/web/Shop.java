@@ -15,11 +15,11 @@ public class Shop implements DbCommand {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		
+		String category = request.getParameter("cat");
 		ProductService service = new ProductServiceImpl();
-		List<ProductVO> list = service.selectProductList();
+		List<ProductVO> list = service.selectShopForm(category);
 		request.setAttribute("product", list);
 		
 		return "shopinfo/shopmain.tiles";
 	}
-
 }
