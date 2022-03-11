@@ -32,7 +32,7 @@
 					<ul>
 						<li><a href="noticeList.do">공지사항</a></li>
 						<li><a href="./.html">자주묻는질문</a></li>
-						<li><a href="./inquiry.do">문의</a></li>
+						<li><a href="./inquiryList.do">문의</a></li>
 						<li><a href="./support.do">고객지원센터</a></li>
 					</ul>
 				</div>

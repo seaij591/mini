@@ -10,8 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.shop.community.inquiry;
 import com.shop.community.support;
+import com.shop.dbtest.inquiry.web.Inquiry;
+import com.shop.dbtest.inquiry.web.InquiryForm;
+import com.shop.dbtest.inquiry.web.InquiryList;
+import com.shop.dbtest.inquiry.web.InquiryWrite;
 import com.shop.dbtest.notice.web.Notice;
 import com.shop.dbtest.notice.web.NoticeForm;
 import com.shop.dbtest.notice.web.NoticeList;
@@ -31,6 +34,7 @@ import com.shop.product.ProductSelect;
 import com.shop.web.About;
 import com.shop.web.MemberList;
 import com.shop.web.MemberLogOut;
+import com.shop.web.Search;
 import com.shop.web.Shop;
 import com.shop.web.IdCheck;
 import com.shop.web.MemberJoin;
@@ -54,8 +58,13 @@ public class FrontController extends HttpServlet {
 
 		// 커뮤니티
 		map.put("/support.do", new support()); // 고객지원센터 페이지
-		map.put("/inquiry.do", new inquiry()); // 문의 게시판
-
+		// 문의게시판
+		map.put("/inquiryList.do", new InquiryList()); // 문의 게시판
+		map.put("/inquiryForm.do", new InquiryForm()); // 문의 등록 폼
+		map.put("/inquiryWrite.do", new InquiryWrite()); // 문의 저장
+		map.put("/inquiry.do", new Inquiry()); // 문의 내용보기
+		
+		// 공지사항
 		map.put("/noticeList.do", new NoticeList()); // 공지사항 목록
 		map.put("/noticeListPaging.do", new NoticeListPaging()); // 공지사항 목록
 		map.put("/notice.do", new Notice()); // 공지사항 내용보기
@@ -83,7 +92,8 @@ public class FrontController extends HttpServlet {
 		map.put("/productSelect.do", new ProductSelect()); //조회
 		//map.put("/bulletinUpdate.do", new BulletinUpdate()); //수정
 		//map.put("/bulletinDelete.do", new BulletinDelete()); //삭제
-		//
+		
+		map.put("/search.do", new Search()); //검색기능
 		
 	}
 

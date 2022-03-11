@@ -1,16 +1,16 @@
-package com.shop.community;
+package com.shop.web;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.shop.common.DbCommand;
 
-public class inquiry implements DbCommand {
+public class Search implements DbCommand {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
-		return "community/inquiry.tiles";
+		return "find/search.tiles";
 	}
 
 }

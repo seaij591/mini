@@ -16,13 +16,13 @@
     rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.min.css?after" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css?after" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css?after" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css?after" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css?after" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css?after" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css?after" type="text/css">
     <link rel="stylesheet" href="css/style.css?after" type="text/css">
     <script src="js/jquery-3.3.1.min.js"></script>
 </head>

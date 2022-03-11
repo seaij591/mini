@@ -15,17 +15,19 @@ public class FindIdResult implements DbCommand {
 		// 아이디 찾기
 		try {
 			request.setCharacterEncoding("UTF-8");
+			
+			String member_name = request.getParameter("member_name");
+			String member_tel = request.getParameter("member_tel");
+
+			MemberServiceImpl vo = new MemberServiceImpl();
+			String member_id = vo.findId(member_name, member_tel);
+
+			request.setAttribute("findid", member_id);
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String member_name = request.getParameter("member_name");
-		String member_tel = request.getParameter("member_tel");
-
-		MemberServiceImpl vo = new MemberServiceImpl();
-		String member_id = vo.findId(member_name, member_tel);
-
-		request.setAttribute("id", member_id);
+		
 		return "find/findIdResult.tiles";
 	}
 
