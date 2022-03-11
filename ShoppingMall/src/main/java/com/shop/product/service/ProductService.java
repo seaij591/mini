@@ -11,6 +11,6 @@ public interface ProductService {
 	public int updateProduct(ProductVO vo);
 	public int deleteProduct(ProductVO vo);
 	public ProductVO loginCheck(ProductVO vo);
-	List<ProductVO> selectShopForm();
+	List<ProductVO> selectShopForm(String category);
 
 }

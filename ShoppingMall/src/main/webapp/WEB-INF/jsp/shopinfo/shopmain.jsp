@@ -45,13 +45,12 @@
                                     <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
-                                                <ul class="nice-scroll">
-                                                    <li><a href="javascript:Outer();">Outer</a></li>
-                                                    <li><a href="javascript:Top();">Top</a></li>
-                                                    <li><a href="javascript:Pants();">Pants</a></li>
-                                                    <li><a href="javascript:Shoes();">Shoes</a></li>
-                                                    <li><a href="javascript:Training();">Training</a></li>
-
+                                                <ul class="menu">
+                                                    <li><a href="shop.do?cat=Outer">Outer</a></li>
+                                                    <li><a href="shop.do?cat=Top">Top</a></li>
+                                                    <li><a href="shop.do?cat=Pants">Pants</a></li>
+                                                    <li><a href="shop.do?cat=Shoes">Shoes</a></li>
+                                                    <li><a href="shop.do?cat=Training">Training</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -76,47 +75,10 @@
                                         </div>
                                     </div>
                                 </div>
-<!---------------------- 사이즈순;. ------------------------------->                                
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFour">Size</a>
-                                    </div>
-                                    <div id="collapseFour" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__size">
-                                                <label for="sm">s
-                                                    <input type="radio" id="sm">
-                                                </label>
-                                                <label for="md">m
-                                                    <input type="radio" id="md">
-                                                </label>
-                                                <label for="l">l
-                                                    <input type="radio" id="xl">
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
 <!---------------------- 컬러순;. ------------------------------->                                
                                 <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFive">Colors</a>
-                                    </div>
-                                    <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__color">
-                                                <label class="c-1" for="sp-1">
-                                                    <input type="radio" id="sp-1">
-                                                </label>
-                                                <label class="c-3" for="sp-3">
-                                                    <input type="radio" id="sp-3">
-                                                </label>
-                                                <label class="c-9" for="sp-9">
-                                                    <input type="radio" id="sp-9">
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
   
                             </div>
@@ -128,7 +90,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__left">
-                                    <p>Showing 1–12 of 126 results</p>
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -144,9 +106,9 @@
                     </div>
 
 <!---------------------- 상품목록;. ------------------------------->
-                    <c:forEach var="vo" items="${product}">
               
                     <div class="row">
+                    <c:forEach var="vo" items="${product}">
 						<div class="col-lg-4 col-md-6 col-sm-6">
 						
 							<div class="product__item">
@@ -177,8 +139,8 @@
 								</div>
 							
 						</div>
-					</div>
 					</c:forEach>
+					</div>
             </div>
         </div>
     </section>

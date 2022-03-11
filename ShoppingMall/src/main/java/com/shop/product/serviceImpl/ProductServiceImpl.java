@@ -131,13 +131,14 @@ public class ProductServiceImpl extends DAO implements ProductService {
 	}
 
 	@Override
-	public List<ProductVO> selectShopForm() {
+	public List<ProductVO> selectShopForm(String category) {
 		// 상품리스트 출력폼
 		List<ProductVO> products = new ArrayList<ProductVO>();
 		ProductVO vo;
-		String sql = "select pd_id, pd_name, pd_category, pd_price, pd_image1, pd_image2, pd_image3, pd_content1 from product";
+		String sql = "select pd_id, pd_name, pd_category, pd_price, pd_image1, pd_image2, pd_image3, pd_content1 from product where pd_category = nvl(?, pd_category) ";
 		try {
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, category);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new ProductVO();
@@ -150,7 +151,6 @@ public class ProductServiceImpl extends DAO implements ProductService {
 				vo.setPdImage3(rs.getString("pd_image3"));
 				vo.setPdContent1(rs.getString("pd_content1"));
 				products.add(vo);
-
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
