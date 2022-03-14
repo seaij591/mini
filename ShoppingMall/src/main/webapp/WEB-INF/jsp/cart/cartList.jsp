@@ -45,7 +45,7 @@
 								<tr>
 									<td class="product__cart__item">
 										<div class="product__cart__item__pic">
-											<img src="img/shopping-cart/cart-1.jpg" alt="">
+											<img src="upload/${vo.pd_image1}" alt="">
 										</div>
 										<div class="product__cart__item__text">
 											<h6>${vo.pd_name}</h6>
@@ -59,7 +59,7 @@
 											</div>
 										</div>
 									</td>
-									<td class="cart__price">$ 30.00</td>
+									<td class="cart__price">${vo.pd_price}</td>
 									<td class="cart__close"><i class="fa fa-close"></i></td>
 								</tr>
 							</c:forEach>

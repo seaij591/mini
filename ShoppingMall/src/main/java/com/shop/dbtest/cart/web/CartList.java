@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.shop.common.DbCommand;
 import com.shop.dbtest.cart.serviceImpl.CartServiceImpl;
@@ -16,8 +17,14 @@ public class CartList implements DbCommand {
 	public String execute(HttpServletRequest request, HttpServletResponse response) {
 		// TODO Auto-generated method stub
 		CartServiceImpl dao = new CartServiceImpl();
+		
+		HttpSession session = request.getSession();
+		String member_id = (String) session.getAttribute("id");
+		
+
+		
 		List<NewCartVO> list = new ArrayList<NewCartVO>();
-		list = dao.newCartSelectList();
+		list = dao.newCartSelectList(member_id);
 		request.setAttribute("cart", list);
 		return "cart/cartList.tiles";
 	}

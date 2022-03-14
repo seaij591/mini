@@ -72,6 +72,13 @@
                 </div>
             </div>
         </div>
+        <form id="cartForm" name="cartForm" action="cartInsert.do" method="post">
+           <input type="hidden" name="pd_id" value="${product.pdId }">
+           <input type="hidden" name="pd_color">
+           <input type="hidden" name="pd_quantity">
+           <input type="hidden" name="pd_size">
+           
+        </form>
         <div class="product__details__content">
             <div class="container">
                 <div class="row d-flex justify-content-center">
@@ -86,37 +93,37 @@
                                     <span>Size:</span>
    
                                     <label class="active" for="S">S
-                                        <input type="radio" id="S">
+                                        <input name="size" type="radio" id="S" value="S">
                                     </label>
                                     
                                     <label for="M">M
-                                        <input type="radio" id="M">
+                                        <input name="size" type="radio" id="M" value="M">
                                     </label>
                                     
                                     <label for="L">L
-                                        <input type="radio" id="L">
+                                        <input name="size" type="radio" id="L" value="L">
                                     </label>
                                 </div>
                                 <div class="product__details__option__color">
                                     <span>Color:</span>
                                     <label class="c-1" for="sp-1">
-                                        <input type="radio" id="sp-1">
                                     </label>
+                                        <input name="color" type="radio" id="sp-1" value="black">
                                     <label class="c-3" for="sp-3">
-                                        <input type="radio" id="sp-3">
                                     </label>
+                                        <input name="color" type="radio" id="sp-3" value="orange">
                                     <label class="c-9" for="sp-9">
-                                        <input type="radio" id="sp-9">
                                     </label>
+                                        <input name="color" type="radio" id="sp-9" value="white">
                                 </div>
                             </div>
                             <div class="product__details__cart__option">
                                 <div class="quantity">
                                     <div class="pro-qty">
-                                        <input type="text" value="1">
+                                        <input name="quantity" type="text" value="1">
                                     </div>
                                 </div>
-                                <a href="#" class="primary-btn">장바구니에 담기</a>
+                                <a href="#" onclick="put_cart(event)" class="primary-btn">장바구니에 담기</a>
                             </div>
                      
                         </div>
@@ -383,6 +390,24 @@
         </div>
     </div>
     <!-- Search End -->
+    
+    <script>
+    	function put_cart(e) {
+    		console.log('ddddd')
+    		e.preventDefault();
+    		var color = document.querySelector('input[name="color"]:checked').value;	
+    		var size = document.querySelector('input[name="size"]:checked').value;
+    		var qty = document.querySelector('input[name="quantity"]').value;
+    		
+    		console.log(color, ',', size, ',', qty);
+    		
+    		cartForm.pd_color.value = color;
+    		cartForm.pd_size.value = size;
+    		cartForm.pd_quantity.value = qty;
+    		cartForm.submit();
+    		
+    	}
+    </script>
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>

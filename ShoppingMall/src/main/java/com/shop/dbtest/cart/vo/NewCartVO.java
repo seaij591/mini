@@ -8,11 +8,26 @@ public class NewCartVO {
 	private int pd_quantity;
 	private String pd_color;
 	private String pd_size;
+	private String pd_image1;
 	
 
 	public NewCartVO() {
 		
 	}
+	
+	
+
+	public String getPd_image1() {
+		return pd_image1;
+	}
+
+
+
+	public void setPd_image1(String pd_image1) {
+		this.pd_image1 = pd_image1;
+	}
+
+
 
 	public String getMember_id() {
 		return member_id;

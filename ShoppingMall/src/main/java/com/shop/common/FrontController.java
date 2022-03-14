@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.shop.community.inquiry;
 import com.shop.community.support;
+import com.shop.dbtest.cart.web.CartCheckFail;
+import com.shop.dbtest.cart.web.CartInsert;
 import com.shop.dbtest.cart.web.CartList;
 import com.shop.dbtest.notice.web.Notice;
 import com.shop.dbtest.notice.web.NoticeForm;
@@ -86,7 +88,9 @@ public class FrontController extends HttpServlet {
 		//map.put("/bulletinDelete.do", new BulletinDelete()); //삭제
 		
 		map.put("/cartList.do", new CartList()); //장바구니 페이지
-		//장바구니 추가
+		map.put("/cartInsert.do", new CartInsert());//장바구니 추가
+		map.put("/cartCheckFail.do", new CartCheckFail());//장바구니 추가 시 같은 상품이 있을 때 돌아가기
+		
 		
 		//상품정보
 		map.put("/shop.do", new Shop()); // shop 정보
