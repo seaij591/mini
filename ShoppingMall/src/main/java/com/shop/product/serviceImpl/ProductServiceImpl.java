@@ -160,4 +160,35 @@ public class ProductServiceImpl extends DAO implements ProductService {
 		return products;
 	}
 
+	@Override
+	public List<ProductVO> searchShop(String productname) {
+		// 상품 검색
+		List<ProductVO> pdname = new ArrayList<ProductVO>();
+		ProductVO vo;
+		String sql = "SELECT * FROM product WHERE pd_name LIKE'%"+productname+"%'";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, productname);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				vo = new ProductVO();
+				vo.setPdId(rs.getString("pd_id"));
+				vo.setPdName(rs.getString("pd_name"));
+				vo.setPdCategory(rs.getString("pd_category"));
+				vo.setPdPrice(rs.getString("pd_price"));
+				vo.setPdImage1(rs.getString("pd_image1"));
+				vo.setPdImage2(rs.getString("pd_image2"));
+				vo.setPdImage3(rs.getString("pd_image3"));
+				vo.setPdContent1(rs.getString("pd_content1"));
+				pdname.add(vo);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return pdname;
+	}
+
 }

@@ -30,6 +30,7 @@ public class InquiryServiceImpl extends DAO implements InquiryService{
 				vo.setNum(rs.getInt("num"));
 				vo.setTitle(rs.getString("title"));
 				vo.setContent(rs.getString("content"));
+				vo.setId(rs.getString("id"));
 				vo.setWdate(rs.getDate("wdate"));
 				vo.setHit(rs.getInt("hit"));
 				
@@ -219,6 +220,9 @@ public class InquiryServiceImpl extends DAO implements InquiryService{
 			e.printStackTrace();
 		}
 	}
+	
+	
+	
 }
 	
 

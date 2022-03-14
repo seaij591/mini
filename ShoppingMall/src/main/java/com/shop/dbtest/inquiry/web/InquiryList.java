@@ -23,5 +23,6 @@ public class InquiryList implements DbCommand {
 		
 		return "inquiry/inquiryList.tiles";
 	}
-
+	
+	
 }

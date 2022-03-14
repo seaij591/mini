@@ -21,6 +21,7 @@ import com.shop.dbtest.notice.web.NoticeForm;
 import com.shop.dbtest.notice.web.NoticeList;
 import com.shop.dbtest.notice.web.NoticeListPaging;
 import com.shop.dbtest.notice.web.NoticeWrite;
+import com.shop.dbtest.search.SearchProduct;
 import com.shop.find.FindId;
 import com.shop.find.FindIdResult;
 import com.shop.find.FindPw;
@@ -94,7 +95,7 @@ public class FrontController extends HttpServlet {
 		//map.put("/bulletinUpdate.do", new BulletinUpdate()); //수정
 		//map.put("/bulletinDelete.do", new BulletinDelete()); //삭제
 		
-		map.put("/search.do", new Search()); //검색기능
+		map.put("/searchProduct.do", new SearchProduct()); //상품검색기능
 		map.put("/cartList.do", new CartList()); //장바구니 페이지
 		//장바구니 추가
 		
