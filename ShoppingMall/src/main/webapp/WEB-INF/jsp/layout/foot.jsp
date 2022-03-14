@@ -18,11 +18,11 @@
 				<div class="footer__widget">
 					<h6>Shopping</h6>
 					<ul>
-						<li><a href="#">Outer</a></li>
-						<li><a href="#">Top</a></li>
-						<li><a href="#">Pants</a></li>
-						<li><a href="#">Shirts</a></li>
-						<li><a href="#">Sports</a></li>
+						<li><a href="shop.do?cat=Outer">Outer</a></li>
+						<li><a href="shop.do?cat=Top">Top</a></li>
+						<li><a href="shop.do?cat=Pants">Pants</a></li>
+						<li><a href="shop.do?cat=Shoes">Shirts</a></li>
+						<li><a href="shop.do?cat=Training">Sports</a></li>
 					</ul>
 				</div>
 			</div>
@@ -32,7 +32,7 @@
 					<ul>
 						<li><a href="noticeList.do">공지사항</a></li>
 						<li><a href="./.html">자주묻는질문</a></li>
-						<li><a href="./inquiry.do">문의</a></li>
+						<li><a href="./inquiryList.do">문의</a></li>
 						<li><a href="./support.do">고객지원센터</a></li>
 					</ul>
 				</div>

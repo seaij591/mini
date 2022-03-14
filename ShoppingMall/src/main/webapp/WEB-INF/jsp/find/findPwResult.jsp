@@ -6,15 +6,13 @@
 <form name="pwsearch" method="post">
 
 	<c:choose>
-		<c:when test="${id != null }">
+		<c:when test="${pw != null }">
 			<div class="container">
 				<div class="found-success">
-					<h4>${id }의 비밀번호는</h4>
-					<div class="found-pw"></div>
-					<h4>입니다</h4>
+					<h4>회원님의 비밀번호는<div class="found-pw"> ${pw }</div>입니다</h4>
 				</div>
 				<div class="found-login">
-					<input type="button" id="btnLogin" value="로그인" onClick='login()' />
+					<input type="button" id="btnLogin" value="로그인" onClick="location.href='login.do'" />
 				</div>
 			</div>
 		</c:when>
@@ -26,7 +24,7 @@
 				<div class="found-login">
 					<input type="button" id="btnback" value="다시 찾기"
 						onClick="history.back()" /> <input type="button" id="btnjoin"
-						value="회원가입" onClick="joinin()" />
+						value="회원가입" onClick="location.href='signup.do'" />
 				</div>
 			</div>
 		</c:otherwise>

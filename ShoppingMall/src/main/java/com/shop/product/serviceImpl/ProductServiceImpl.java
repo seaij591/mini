@@ -131,13 +131,14 @@ public class ProductServiceImpl extends DAO implements ProductService {
 	}
 
 	@Override
-	public List<ProductVO> selectShopForm() {
+	public List<ProductVO> selectShopForm(String category) {
 		// 상품리스트 출력폼
 		List<ProductVO> products = new ArrayList<ProductVO>();
 		ProductVO vo;
-		String sql = "select pd_id, pd_name, pd_category, pd_price, pd_image1, pd_image2, pd_image3, pd_content1 from product";
+		String sql = "select pd_id, pd_name, pd_category, pd_price, pd_image1, pd_image2, pd_image3, pd_content1 from product where pd_category = nvl(?, pd_category) ";
 		try {
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, category);
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				vo = new ProductVO();
@@ -150,7 +151,6 @@ public class ProductServiceImpl extends DAO implements ProductService {
 				vo.setPdImage3(rs.getString("pd_image3"));
 				vo.setPdContent1(rs.getString("pd_content1"));
 				products.add(vo);
-
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -158,6 +158,37 @@ public class ProductServiceImpl extends DAO implements ProductService {
 			close();
 		}
 		return products;
+	}
+
+	@Override
+	public List<ProductVO> searchShop(String productname) {
+		// 상품 검색
+		List<ProductVO> pdname = new ArrayList<ProductVO>();
+		ProductVO vo;
+		String sql = "SELECT * FROM product WHERE pd_name LIKE'%"+productname+"%'";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, productname);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				vo = new ProductVO();
+				vo.setPdId(rs.getString("pd_id"));
+				vo.setPdName(rs.getString("pd_name"));
+				vo.setPdCategory(rs.getString("pd_category"));
+				vo.setPdPrice(rs.getString("pd_price"));
+				vo.setPdImage1(rs.getString("pd_image1"));
+				vo.setPdImage2(rs.getString("pd_image2"));
+				vo.setPdImage3(rs.getString("pd_image3"));
+				vo.setPdContent1(rs.getString("pd_content1"));
+				pdname.add(vo);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return pdname;
 	}
 
 }

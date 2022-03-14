@@ -10,16 +10,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.shop.community.inquiry;
 import com.shop.community.support;
+
 import com.shop.dbtest.cart.web.CartCheckFail;
 import com.shop.dbtest.cart.web.CartInsert;
+
+import com.shop.dbtest.inquiry.web.Inquiry;
+import com.shop.dbtest.inquiry.web.InquiryForm;
+import com.shop.dbtest.inquiry.web.InquiryList;
+import com.shop.dbtest.inquiry.web.InquiryWrite;
+
 import com.shop.dbtest.cart.web.CartList;
 import com.shop.dbtest.notice.web.Notice;
 import com.shop.dbtest.notice.web.NoticeForm;
 import com.shop.dbtest.notice.web.NoticeList;
 import com.shop.dbtest.notice.web.NoticeListPaging;
 import com.shop.dbtest.notice.web.NoticeWrite;
+import com.shop.dbtest.search.SearchProduct;
 import com.shop.find.FindId;
 import com.shop.find.FindIdResult;
 import com.shop.find.FindPw;
@@ -35,6 +42,7 @@ import com.shop.web.IdCheck;
 import com.shop.web.MemberJoin;
 import com.shop.web.MemberList;
 import com.shop.web.MemberLogOut;
+import com.shop.web.Search;
 import com.shop.web.Shop;
 import com.shop.web.Shopdetails;
 
@@ -57,8 +65,13 @@ public class FrontController extends HttpServlet {
 
 		// 커뮤니티
 		map.put("/support.do", new support()); // 고객지원센터 페이지
-		map.put("/inquiry.do", new inquiry()); // 문의 게시판
-
+		// 문의게시판
+		map.put("/inquiryList.do", new InquiryList()); // 문의 게시판
+		map.put("/inquiryForm.do", new InquiryForm()); // 문의 등록 폼
+		map.put("/inquiryWrite.do", new InquiryWrite()); // 문의 저장
+		map.put("/inquiry.do", new Inquiry()); // 문의 내용보기
+		
+		// 공지사항
 		map.put("/noticeList.do", new NoticeList()); // 공지사항 목록
 		map.put("/noticeListPaging.do", new NoticeListPaging()); // 공지사항 목록
 		map.put("/notice.do", new Notice()); // 공지사항 내용보기
@@ -87,6 +100,7 @@ public class FrontController extends HttpServlet {
 		//map.put("/bulletinUpdate.do", new BulletinUpdate()); //수정
 		//map.put("/bulletinDelete.do", new BulletinDelete()); //삭제
 		
+		map.put("/searchProduct.do", new SearchProduct()); //상품검색기능
 		map.put("/cartList.do", new CartList()); //장바구니 페이지
 		map.put("/cartInsert.do", new CartInsert());//장바구니 추가
 		map.put("/cartCheckFail.do", new CartCheckFail());//장바구니 추가 시 같은 상품이 있을 때 돌아가기

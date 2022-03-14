@@ -24,9 +24,9 @@ public class FindPwResult implements DbCommand {
 		String member_tel = request.getParameter("member_tel");
 
 		MemberServiceImpl vo = new MemberServiceImpl();
-		String member_pw = vo.findPw(member_id, member_name, member_tel);
+		String member_password = vo.findPw(member_id, member_name, member_tel);
 
-		request.setAttribute("id", member_id);
+		request.setAttribute("pw", member_password);
 		return "find/findPwResult.tiles";
 	}
 }

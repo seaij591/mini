@@ -76,7 +76,6 @@
 
 						<li><a href="./about.do">About Us</a></li>
 
-											<c:if test="${not empty id and id ne 'admin'}">		
 						<li><a href="#">My Page</a>
 							<ul class="dropdown">
 								<li><a href="cartList.do">장바구니</a></li>
@@ -84,13 +83,12 @@
 								<li><a href="./.html">좋아요</a></li>
 								<li><a href="./.html">최근 본 상품</a></li>
 							</ul></li>
-					</c:if>
 
 						<li><a href="#">Community</a>
 							<ul class="dropdown">
 								<li><a href="noticeList.do">공지사항</a></li>
 								<li><a href="./.html">자주묻는질문</a></li>
-								<li><a href="./inquiry.do">문의</a></li>
+								<li><a href="./inquiryList.do">문의</a></li>
 								<li><a href="./support.do">고객지원센터</a></li>
 							</ul></li>
 
@@ -99,7 +97,7 @@
 								<ul class="dropdown">
 									<li><a href="./productForm.do">상품등록/수정</a></li>
 									<li><a href="./memberList.do">회원리스트</a></li>
-								</ul></li>
+								</ul></li> 
 						</c:if>
 
 					</ul>
@@ -107,10 +105,9 @@
 			</div>
 			<div class="col-lg-3 col-md-3">
 				<div class="header__nav__option">
-					<a href="#" class="search-switch"><img
-						src="img/icon/search.png" alt=""></a> <a href="#"><img
-						src="img/icon/heart.png" alt=""></a> <a href="#"><img
-						src="img/icon/cart.png" alt=""> <span>0</span></a>
+					<a href="./search.do" class="search-switch"><img src="img/icon/search.png" alt=""></a> 
+					<a href="#"><img src="img/icon/heart.png" alt=""></a> 
+					<a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
 				</div>
 			</div>
 		</div>
